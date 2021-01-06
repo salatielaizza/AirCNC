@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 const routes = require('./routes');
 
@@ -16,6 +17,7 @@ mongoose.connect('mongodb+srv://Salatiel:Salatiel@aircnc.zwdl5.mongodb.net/<dbna
 //req.params = acessar route params (edição e delete)
 //req.body = acessar corpo da requisição (para criazção e edição)
 
+app.use(cors());
 //comando necessário para ter a leitura do body, como se fosse um plugin
 app.use(express.json());
 app.use(routes);
